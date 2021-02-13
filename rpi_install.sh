@@ -15,13 +15,13 @@ sleep 5s
 sudo apt-get --assume-yes update
 sudo apt-get --assume-yes upgrade
 sudo apt-get --assume-yes autoremove
-sudo apt-get --assume-yes clean
+sudo apt-get --assume-yes autoclean
 
 # run it again in case any upgrades got caught
 sudo apt-get --assume-yes update
 sudo apt-get --assume-yes upgrade
 sudo apt-get --assume-yes autoremove
-sudo apt-get --assume-yes clean
+sudo apt-get --assume-yes autoclean
 
 # install dependency packages
 sudo apt-get --assume-yes install python3-pip
@@ -44,7 +44,7 @@ sudo apt-get --assume-yes install curl wget
 sudo apt-get --assume-yes update
 sudo apt-get --assume-yes upgrade
 sudo apt-get --assume-yes autoremove
-sudo apt-get --assume-yes clean
+sudo apt-get --assume-yes autoclean
 
 # install PIP
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -60,11 +60,12 @@ virtualenv TMenv
 source TMenv/bin/activate
 
 # install PIP packages in virtual environment
+pip3 install wrapt --upgrade --ignore-installed  # rpi fix
 pip3 install -r requirements.txt
-# pip3 install https://storage.googleapis.com/tensorflow/raspberrypi/tensorflow-2.3.0rc2-cp35-none-linux_armv6l.whl
+pip3 install https://github.com/lhelontra/tensorflow-on-arm/releases/download/v2.4.0/tensorflow-2.4.0-cp37-none-linux_armv7l.whl
 deactivate
 
-# remove vlc because it hangs certain upgrade
+# remove vlc because it hangs certain upgrades
 sudo apt-get --assume-yes remove --purge vlc
 
 # update packages and remove any unnecessary packages

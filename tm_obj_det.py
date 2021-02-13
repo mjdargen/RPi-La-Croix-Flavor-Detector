@@ -81,7 +81,7 @@ def speak(speakQ, ):
 def main():
 
     # read .txt file to get labels
-    labels_path = f"{DIR_PATH}la_croix_model/labels.txt"
+    labels_path = f"{DIR_PATH}/la_croix_model/labels.txt"
     # open input file label.txt
     labelsfile = open(labels_path, 'r')
 
@@ -96,7 +96,7 @@ def main():
     labelsfile.close()
 
     # load the teachable machine model
-    model_path = f"{DIR_PATH}la_croix_model/keras_model.h5"
+    model_path = f"{DIR_PATH}/la_croix_model/keras_model.h5"
     model = tf.models.load_model(model_path, compile=False)
 
     # initialize webcam video object
