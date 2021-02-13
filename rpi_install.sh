@@ -53,22 +53,15 @@ sudo rm get-pip.py
 sudo rm -rf ~/.cache/pip
 
 # install PIP packages
-sudo pip3 install setuptools
-sudo pip3 install virtualenv virtualenvwrapper
+sudo pip3 install setuptools virtualenv virtualenvwrapper
 
 # setup virtual environment
 virtualenv TMenv
 source TMenv/bin/activate
 
 # install PIP packages in virtual environment
-pip3 install numpy==1.18.1
-pip3 install scipy==1.4.1
-pip3 install pyttsx3==2.81
-pip3 install matplotlib
-pip3 install cvlib==0.2.3
-pip3 install opencv-contrib-python==4.0.1.24 # issues here for pi, pi uses 4.0.1.24
-pip3 install wrapt --upgrade --ignore-installed # only for the pi
-pip3 install tensorflow==1.14.0 # issues here for pi, pi uses 1.14.0
+pip3 install -r requirements.txt
+# pip3 install https://storage.googleapis.com/tensorflow/raspberrypi/tensorflow-2.3.0rc2-cp35-none-linux_armv6l.whl
 deactivate
 
 # remove vlc because it hangs certain upgrade
