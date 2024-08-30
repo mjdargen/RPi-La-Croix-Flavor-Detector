@@ -1,5 +1,5 @@
 cvlib==0.2.3
-opencv-contrib-python==4.2.0.32
+opencv-contrib-python==4.8.1.78
 #tensorflow>=2.4.0
 pyttsx3==2.81
 matplotlib
